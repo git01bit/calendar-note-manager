@@ -11,5 +11,33 @@
     <link rel="icon" href="assets/images/list-check.svg" type="image/svg+xml" />
   </head>
 
-  <body></body>
+  <body class="mx-auto flex min-h-dvh max-w-2xl flex-col justify-center px-4">
+    <!-- Calendar creation form -->
+    <section class="flex flex-col gap-2 sm:flex-row">
+      <input
+        type="text"
+        placeholder="نام ماه"
+        class="flex-2 rounded-lg border px-3 py-2 outline-none"
+      />
+      <input
+        type="number"
+        placeholder="تعداد روز"
+        class="flex-1 rounded-lg border px-3 py-2 outline-none"
+      />
+    </section>
+
+    <!-- Calendar and notes view -->
+    <section></section>
+
+    <!-- Calendar creation button -->
+    <button
+      type="button"
+      class="mt-4 cursor-pointer rounded-lg border border-transparent bg-emerald-50 p-3 text-emerald-600 transition duration-300 hover:border-emerald-600"
+    >
+      ایجاد دفترچه تقویم
+    </button>
+
+    <!-- Calendar deletion button -->
+    <button type="button"></button>
+  </body>
 </html>
