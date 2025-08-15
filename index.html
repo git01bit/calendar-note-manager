@@ -10,201 +10,43 @@
     <link rel="stylesheet" href="src/output.css" />
 
     <link rel="icon" href="assets/images/list-check.svg" type="image/svg+xml" />
+
+    <script type="module" src="js/main.js" defer></script>
   </head>
 
   <body class="mx-auto flex min-h-dvh max-w-2xl flex-col justify-center p-4">
     <!-- Calendar creation form -->
-    <section class="hidden flex-col gap-2 sm:flex-row">
+    <section
+      id="creation-form-container"
+      class="flex flex-col gap-2 sm:flex-row"
+    >
       <input
         type="text"
         placeholder="نام ماه"
+        id="month-name-input"
         class="flex-2 rounded-lg border px-3 py-2 outline-none"
       />
       <input
         type="number"
         placeholder="تعداد روز"
+        id="month-days-input"
         class="flex-1 rounded-lg border px-3 py-2 outline-none"
       />
     </section>
 
     <!-- Calendar and notes view -->
-    <section>
+    <section id="calendar-container" class="hidden">
       <!-- Calendar -->
       <div class="overflow-hidden rounded-2xl border">
-        <h1 class="bg-black p-8 text-center text-4xl text-white">فروردین</h1>
+        <h1
+          id="calendar-name"
+          class="bg-black p-8 text-center text-4xl text-white"
+        ></h1>
 
-        <div class="grid grid-cols-3 gap-4 p-4 text-center sm:grid-cols-7">
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            1
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            2
-          </div>
-          <div
-            class="relative cursor-pointer border border-black bg-red-500 py-6 text-white transition-all duration-300 hover:bg-gray-200"
-          >
-            3
-            <span
-              class="absolute top-2 left-2 size-3 rounded-full bg-white"
-            ></span>
-          </div>
-          <div
-            class="relative cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            4
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            5
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            6
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            7
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            8
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            9
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            10
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            11
-          </div>
-          <div
-            class="relative cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            12
-            <span
-              class="absolute top-2 left-2 size-3 rounded-full bg-red-500"
-            ></span>
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            13
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            14
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            15
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            16
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            17
-          </div>
-          <div
-            class="relative cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            18
-            <span
-              class="absolute top-2 left-2 size-3 rounded-full bg-red-500"
-            ></span>
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            19
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            20
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            21
-          </div>
-          <div
-            class="relative cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            22
-            <span
-              class="absolute top-2 left-2 size-3 rounded-full bg-red-500"
-            ></span>
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            23
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            24
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            25
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            26
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            27
-          </div>
-          <div
-            class="relative cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            28
-            <span
-              class="absolute top-2 left-2 size-3 rounded-full bg-red-500"
-            ></span>
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            29
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            30
-          </div>
-          <div
-            class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-          >
-            31
-          </div>
-        </div>
+        <div
+          id="calendar-days-container"
+          class="grid grid-cols-3 gap-4 p-4 text-center sm:grid-cols-7"
+        ></div>
       </div>
 
       <!-- Notes -->
@@ -246,15 +88,17 @@
     <!-- Calendar creation button -->
     <button
       type="button"
-      class="mt-4 hidden cursor-pointer rounded-lg border border-transparent bg-emerald-50 p-3 text-emerald-600 transition duration-300 hover:border-emerald-600"
+      id="calendar-creation-btn"
+      class="mt-4 cursor-pointer rounded-lg border border-transparent bg-emerald-50 p-3 text-emerald-600 transition duration-300 hover:border-emerald-600"
     >
       ایجاد دفترچه تقویم
     </button>
 
     <!-- Calendar deletion button -->
     <button
+      id="calendar-deletion-btn"
       type="button"
-      class="mt-8 cursor-pointer rounded-lg border border-transparent bg-red-50 p-3 text-red-600 transition duration-300 hover:border-red-600"
+      class="mt-8 hidden cursor-pointer rounded-lg border border-transparent bg-red-50 p-3 text-red-600 transition duration-300 hover:border-red-600"
     >
       حذف دفترچه تقویم
     </button>
