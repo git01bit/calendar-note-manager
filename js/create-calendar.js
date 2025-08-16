@@ -15,6 +15,7 @@ const calendarDeletionBtn = document.getElementById("calendar-deletion-btn");
 
 let monthName;
 let monthDays;
+let calendarObject;
 
 // Create a new instance of Calendar class
 function createCalendarObject() {
@@ -26,7 +27,7 @@ function createCalendarObject() {
 
 // Create calendar UI
 function createCalendar() {
-  const calendarObject = createCalendarObject();
+  calendarObject = createCalendarObject();
   let daysHtml = "";
 
   calendarName.textContent = calendarObject.monthName;
@@ -49,4 +50,6 @@ function createCalendar() {
   calendarContainer.classList.remove("hidden");
   calendarDeletionBtn.classList.remove("hidden");
 }
+
 export default createCalendar;
+export { calendarObject };
