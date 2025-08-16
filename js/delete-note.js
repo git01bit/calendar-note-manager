@@ -1,6 +1,7 @@
 import { day } from "./add-note.js";
 import { calendarObject } from "./create-calendar.js";
 
+// Delete selected note and update UI
 function deleteNote(element) {
   if (element.target.tagName === "SPAN" || element.target.tagName === "I") {
     const selectedDeleteBtn =

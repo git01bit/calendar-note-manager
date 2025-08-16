@@ -1,4 +1,5 @@
 import createCalendar from "./create-calendar.js";
+import deleteCalendar from "./delete-calendar.js";
 import selectDayAndViewNotes from "./select-day-and-display-notes.js";
 import { addNote, selectedDay } from "./add-note.js";
 import deleteNote from "./delete-note.js";
@@ -21,14 +22,13 @@ window.addEventListener("DOMContentLoaded", () => {
     createCalendar();
   }
 });
-calendarCreationBtn.addEventListener("click", () => {
-  createCalendar();
-});
+calendarCreationBtn.addEventListener("click", createCalendar);
 window.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     createCalendar();
   }
 });
+calendarDeletionBtn.addEventListener("click", deleteCalendar);
 calendarDaysContainer.addEventListener("click", (e) => {
   selectDayAndViewNotes(e);
   selectedDay(e);
