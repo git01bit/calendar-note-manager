@@ -24,7 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 calendarCreationBtn.addEventListener("click", createCalendar);
 window.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
+  if (e.key === "Enter" && !calendarCreationBtn.classList.contains("hidden")) {
     createCalendar();
   }
 });
