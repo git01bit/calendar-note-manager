@@ -1,8 +1,12 @@
 import createCalendar from "./create-calendar.js";
+import selectDayAndViewNotes from "./select-day-and-display-notes.js";
 
 const calendarCreationBtn = document.getElementById("calendar-creation-btn");
+const calendarDaysContainer = document.getElementById(
+  "calendar-days-container",
+);
 
-// Start creating calendar when button is clicked or Enter is pressed
+// Set up event listeners for user interactions
 calendarCreationBtn.addEventListener("click", () => {
   createCalendar();
 });
@@ -11,3 +15,4 @@ window.addEventListener("keydown", (e) => {
     createCalendar();
   }
 });
+calendarDaysContainer.addEventListener("click", selectDayAndViewNotes);
