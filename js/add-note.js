@@ -56,4 +56,4 @@ function addNote(e) {
   });
 }
 
-export { addNote, selectedDay };
+export { addNote, selectedDay, day };
