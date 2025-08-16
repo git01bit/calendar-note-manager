@@ -2,6 +2,8 @@ import createCalendar from "./create-calendar.js";
 import selectDayAndViewNotes from "./select-day-and-display-notes.js";
 import { addNote, selectedDay } from "./add-note.js";
 import saveToLocalStorage from "./save-to-local-storage.js";
+import loadFromLocalStorage from "./load-from-local-storage.js";
+import { savedCalendarObject } from "./load-from-local-storage.js";
 
 const calendarCreationBtn = document.getElementById("calendar-creation-btn");
 const calendarDaysContainer = document.getElementById(
@@ -10,6 +12,12 @@ const calendarDaysContainer = document.getElementById(
 const addNoteBtn = document.getElementById("add-note-btn");
 
 // Set up event listeners for user interactions
+window.addEventListener("DOMContentLoaded", () => {
+  loadFromLocalStorage();
+  if (savedCalendarObject) {
+    createCalendar();
+  }
+});
 calendarCreationBtn.addEventListener("click", () => {
   createCalendar();
 });

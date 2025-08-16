@@ -1,4 +1,5 @@
 import Calendar from "./class-calendar.js";
+import { savedCalendarObject } from "./load-from-local-storage.js";
 
 const monthNameInput = document.getElementById("month-name-input");
 const monthDaysInput = document.getElementById("month-days-input");
@@ -19,10 +20,14 @@ let calendarObject;
 
 // Create a new instance of Calendar class
 function createCalendarObject() {
-  monthName = monthNameInput.value;
-  monthDays = parseInt(monthDaysInput.value);
+  if (savedCalendarObject) {
+    return savedCalendarObject;
+  } else {
+    monthName = monthNameInput.value;
+    monthDays = parseInt(monthDaysInput.value);
 
-  return new Calendar(monthName, monthDays);
+    return new Calendar(monthName, monthDays);
+  }
 }
 
 // Create calendar UI
@@ -33,14 +38,28 @@ function createCalendar() {
   calendarName.textContent = calendarObject.monthName;
 
   for (let i = 1; i <= calendarObject.monthDays; i++) {
-    daysHtml += `
-    <div
-      id="${i}"
-      class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-      >
-      ${i}
-    </div>
+    if (calendarObject.monthNotes[i].length > 0) {
+      daysHtml += `
+      <div
+        id="${i}"
+        class="cursor-pointer border border-black py-6 transition-all duration-300 relative hover:bg-gray-200"
+        >
+        ${i}
+        <span
+          class="absolute top-2 left-2 size-3 rounded-full bg-red-500"
+        ></span>
+      </div>
+      `;
+    } else {
+      daysHtml += `
+      <div
+        id="${i}"
+        class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
+        >
+        ${i}
+      </div>
     `;
+    }
   }
   calendarDaysContainer.innerHTML = daysHtml;
 
