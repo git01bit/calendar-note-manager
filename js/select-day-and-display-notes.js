@@ -17,10 +17,24 @@ function selectDayAndViewNotes(element) {
       days.forEach((day) => {
         day.classList.remove("bg-red-500", "text-white");
         day.classList.add("hover:bg-gray-200");
+
+        const spanInsideDiv = day.querySelector("span");
+
+        if (spanInsideDiv) {
+          spanInsideDiv.classList.remove("bg-white");
+          spanInsideDiv.classList.add("bg-red-500");
+        }
       });
 
       element.target.classList.add("bg-red-500", "text-white");
       element.target.classList.remove("hover:bg-gray-200");
+
+      const spanInsideSelectedDiv = element.target.querySelector("span");
+
+      if (spanInsideSelectedDiv) {
+        spanInsideSelectedDiv.classList.remove("bg-red-500");
+        spanInsideSelectedDiv.classList.add("bg-white");
+      }
 
       // Display selected day's notes
       const dayId = element.target.id;
@@ -31,11 +45,11 @@ function selectDayAndViewNotes(element) {
       dayNotes.forEach((note) => {
         notesHtml += `
         <li>
-            <span class="cursor-pointer text-red-600"
-              ><i class="fa-solid fa-trash-can fa-xs"></i
-            ></span>
-            ${note}
-          </li>
+          <span class="cursor-pointer text-red-600"
+            ><i class="fa-solid fa-trash-can fa-xs"></i
+          ></span>
+          ${note}
+        </li>
         `;
       });
 

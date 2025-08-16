@@ -35,10 +35,10 @@ function createCalendar() {
   for (let i = 1; i <= calendarObject.monthDays; i++) {
     daysHtml += `
     <div
-        id="${i}"
-        class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
-        >
-        ${i}
+      id="${i}"
+      class="cursor-pointer border border-black py-6 transition-all duration-300 hover:bg-gray-200"
+      >
+      ${i}
     </div>
     `;
   }
